@@ -1,39 +1,95 @@
+/* 
 
 
-/* Navbar styling */
+/* Navbar Styles */
 .navbar {
-  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: var(--secondary-color);
+  position: relative;
+}
+
+.navLogo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navLinksWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  color: var(--secondary-color);
+  padding: 0.5rem 1rem;
+  transition: color var(--transition-duration);
+}
+
+.navLink:hover {
+  color: var(--accent-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu {
+    display: block;
+  }
+
+  .navLinksWrapper {
+    position: absolute;
+    top: 67%;
+    left: 0;
     width: 100%;
-    gap: 150px;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-duration) ease-in-out;
   }
-  
-  /* Logo styling */
-  .navLogo {
-    font-size: 1.5em;
-    font-weight: bold;
-    display: flex;
-    justify-content: start;
+
+  .navLinksWrapper.open {
+    max-height: 300px;
+    /* Adjust based on the number of links */
   }
-  
-  /* Navigation links container */
+
   .navLinks {
-    display: flex;
-    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px;
+
   }
-  
-  /* Individual navigation link */
+
   .navLink {
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    width: 100%;
+    text-align: left;
   }
-  
-  .navLink:hover {
-    background-color: #444;
+}
+
+@media (max-width: 480px) {
+  .navLogo {
+    font-size: 1.2rem;
   }
-  
+
+  .navLink {
+    padding: 0.5rem;
+  }
+}

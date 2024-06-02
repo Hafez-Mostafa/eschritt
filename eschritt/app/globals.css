@@ -8,11 +8,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #333;
+  --secondary-color: #f0f0f0;
+  --accent-color: #007bff;
+  --font-family: 'Arial, sans-serif';
+  --transition-duration: 0.3s;
 }
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+} 
